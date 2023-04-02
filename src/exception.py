@@ -2,6 +2,8 @@ import sys
 sys.path.append('.') # to let python know src module is in this directory 
 from src.logger import logging
 
+
+
 def error_msg_detail(error,error_detail:sys): # error details
     _,_,exc_tb = error_detail.exc_info()
     file_name = exc_tb.tb_frame.f_code.co_filename
