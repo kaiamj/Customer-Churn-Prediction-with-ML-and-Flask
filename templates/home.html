@@ -1,0 +1,91 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Customer Churn Prediction for travel company </h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Customer Churn Prediction for travel company </legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input class="form-control" type="number" name="Age"
+                placeholder="Age" min='0' max='150' />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Frequent Flyer</label>
+            <select class="form-control" name="FrequentFlyer" placeholder="FrequentFlyer" required>
+                <option class="placeholder" selected disabled value="">Frequent Flyer</option>
+                <option value="Yes">
+                    Yes
+                </option>
+                <option value="No">
+                    No
+                </option>
+                <option value="No Record">
+                    No Record
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Annual Income Class</label>
+            <select class="form-control" name="AnnualIncomeClass" placeholder="AnnualIncomeClass" required>
+                <option class="placeholder" selected disabled value="">Annual Income Class</option>
+                <option value="Middle Income">
+                    Middle Income
+                </option>
+                <option value="Low Income">
+                    Low Income
+                </option>
+                <option value="High Income">
+                    High Income
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Services Opted</label>
+            <input class="form-control" type="number" name="ServicesOpted"
+                placeholder="ServicesOpted" min='1' max='10' />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Account Synced To Social Media </label>
+            <select class="form-control" name="AccountSyncedToSocialMedia" placeholder="AccountSyncedToSocialMedia " required>
+                <option class="placeholder" selected disabled value="">Account Synced To Social Media </option>
+                <option value="No">
+                    No
+                </option>
+                <option value="Yes">
+                    Yes
+                </option>
+    
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Booked Hotel Or Not </label>
+            <select class="form-control" name="BookedHotelOrNot" placeholder="BookedHotelOrNot " required>
+                <option class="placeholder" selected disabled value="">Booked Hotel Or Not </option>
+                <option value="No">
+                    No
+                </option>
+                <option value="Yes">
+                    Yes
+                </option>
+    
+            </select>
+        </div>
+
+       
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Customer will Churn or not" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
